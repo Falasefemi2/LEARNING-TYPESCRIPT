@@ -44,22 +44,67 @@ anotheFnc("FEMI", {
   password: "",
 });
 
+// interface Quiz {
+//   name: string;
+//   type: string;
+// }
+
+// interface Course {
+//   name: string;
+//   author: string;
+//   subject: string;
+// }
+
+// class Sellable<T> {
+//   public cart: T[] = [];
+
+//   addToCart(product: T) {
+//     this.cart.push(product);
+//   }
+// }
+
+const getSearchProducts = <T>(products: T[]): T => {
+  const myIndex = 3;
+  return products[myIndex];
+};
+
+interface Database {
+  connection: string;
+  userName: string;
+  password: string;
+}
+
+const anotherFunction = <T, U extends Database>(
+  valOne: T,
+  valTwo: U
+): object => {
+  return {
+    valOne,
+    valTwo,
+  };
+};
+
+anotherFunction(3, {
+  connection: "",
+  userName: "",
+  password: "",
+});
 
 interface Quiz {
-    name: string,
-    type: string
+  name: string,
+  type: string
 }
 
 interface Course {
-    name: string,
-    author: string,
-    subject: string
+  name: string,
+  author: string,
+  subject: string
 }
 
 class Sellable<T> {
-    public cart: T[] = []
+  public cart: T[] = []
 
-    addToCart(product: T){
-        this.cart.push(product)
-    }
+  addToCart(products: T) {
+    this.cart.push(products)
+  }
 }
